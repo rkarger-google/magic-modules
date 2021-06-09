@@ -128,7 +128,7 @@ func resourceSqlSslCertCreate(d *schema.ResourceData, meta interface{}) error {
 	fingerprint := resp.ClientCert.CertInfo.Sha1Fingerprint
 	d.SetId(fmt.Sprintf("projects/%s/instances/%s/sslCerts/%s", project, instance, fingerprint))
 	if err := d.Set("sha1_fingerprint", fingerprint); err != nil {
-		return fmt.Errorf("Error setting sha1_fingerprint: %s", err)
+		return fmt.Errorf("Error ERROR setting sha1_fingerprint: %s", err)
 	}
 
 	// The private key is only returned on the initial insert so set it here.
